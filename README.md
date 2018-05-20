@@ -1,8 +1,13 @@
+[![Google Group](https://img.shields.io/badge/-Google%20Group-lightgrey.svg)](https://groups.google.c
+[![Build Status](https://travis-ci.org/jupyter/cookiecutter-docker-stacks.svg?branch=master)](https://travis-ci.org/jupyter/cookiecutter-docker-stacks)
+
 # cookiecutter-docker-stacks
 
-A template for creating a community maintained Jupyter Docker Stack image
-with initial image build and test automation on Travis and final build and
-image registration on Docker Cloud.
+A template for creating a community maintained Jupyter Docker image based on
+one of the images in the [jupyter/docker-stacks project](https://github.com/jupyter/docker-stacks).
+
+Projects created from this template support initial image build and test
+automation on Travis CI and final build and image registration on Docker Cloud.
 
 ### Create a Project
 
