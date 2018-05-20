@@ -1,8 +1,4 @@
-{% if 'minimal' in cookiecutter.stack_base_image %}
-FROM jupyter/base-notebook
-{% else %}
-FROM jupyter/minimal-notebook
-{% endif %}
+FROM {{ cookiecutter.stack_base_image }}
 
 # Add RUN statements to install packages as the $NB_USER defined in the base images.
 
