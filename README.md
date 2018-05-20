@@ -1,4 +1,4 @@
-[![Google Group](https://img.shields.io/badge/-Google%20Group-lightgrey.svg)](https://groups.google.c
+[![Google Group](https://img.shields.io/badge/-Google%20Group-lightgrey.svg)](https://groups.google.com/forum/#!forum/jupyter)
 [![Build Status](https://travis-ci.org/jupyter/cookiecutter-docker-stacks.svg?branch=master)](https://travis-ci.org/jupyter/cookiecutter-docker-stacks)
 
 # cookiecutter-docker-stacks
