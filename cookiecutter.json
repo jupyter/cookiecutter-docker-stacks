@@ -1,0 +1,9 @@
+{
+    "stack_name": "my-jupyter-stack",
+    "stack_org": "my-project",
+    "stack_base_image": [
+        "jupyter/base-notebook",
+        "jupyter/minimal-notebook"
+    ],
+    "stack_description": "{{ cookiecutter.stack_name }} is a community maintained Jupyter Docker Stack image"
+}
