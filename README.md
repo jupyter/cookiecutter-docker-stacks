@@ -19,13 +19,16 @@ cookiecutter https://github.com/jupyter/cookiecutter-docker-stacks.git
 # Enter a name for the stack image. This will serve as both the git repository
 name and the part of the Docker image name after the slash.
 stack_name [my-jupyter-stack]:
+
 # Enter the user or organization name under which this stack will reside on
 # Docker Cloud / Hub. You must have access to manage this Docker Cloud org in
 # order to push images here and setup automated builds.
 stack_org [my-project]:
+
 # Select an image from the jupyter/docker-stacks project that will serve as the
 # base for your new image.
 stack_base_image [jupyter/base-notebook]:
+
 # Enter a longer description of the stack for your README.
 stack_description [my-jupyter-stack is a community maintained Jupyter Docker Stack image]:
 
