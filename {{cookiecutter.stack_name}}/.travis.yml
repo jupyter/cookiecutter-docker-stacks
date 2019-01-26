@@ -7,4 +7,5 @@ services:
 install:
     - make test-env
 script:
+    - make build
     - make test
