@@ -18,7 +18,11 @@ dev: ARGS?=
 dev: DARGS?=
 dev: PORT?=8888
 dev: ## Make a container from a tagged image image
-	docker run -it --rm -p $(PORT):8888 $(DARGS) $(REPO) $(ARGS)
+	docker run -it --rm -p $(PORT):8888 $(DARGS) $(IMAGE):$(TAG) $(ARGS)
+
+run: DARGS?=
+run: ## run a shell in interactive mode in a stack
+	docker run -it --rm $(DARGS) $(IMAGE):$(TAG) $(SHELL)
 
 test: ## Make a test run against the latest image
 	pytest tests
