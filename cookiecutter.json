@@ -3,7 +3,13 @@
     "stack_org": "my-project",
     "stack_base_image": [
         "jupyter/base-notebook",
-        "jupyter/minimal-notebook"
+        "jupyter/minimal-notebook",
+        "jupyter/scipy-notebook",
+        "jupyter/r-notebook",
+        "jupyter/tensorflow-notebook",
+        "jupyter/datascience-notebook",
+        "jupyter/pyspark-notebook",
+        "jupyter/all-spark-notebook"
     ],
     "stack_description": "{{ cookiecutter.stack_name }} is a community maintained Jupyter Docker Stack image"
 }
