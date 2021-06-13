@@ -48,7 +48,6 @@ jobs:
         with:
           driver: docker # to be able to test the image locally
       - name: Build # Build only to be able to run tests
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: "."
@@ -66,13 +65,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
         {%- endraw %}
       - name: Push
-        id: docker_push
+        {%- raw %}
+        if: github.ref == 'refs/heads/master'
+        {%- endraw %}
         uses: docker/build-push-action@v2
         with:
           context: "."
           file: "Dockerfile"
-          {%- raw %}
-          push: ${{ github.event_name != 'pull_request' }}
-          {%- endraw %}
           tags: |
             {{ cookiecutter.stack_org }}/{{ cookiecutter.stack_name }}:{% raw %}${{ steps.getrefs.outputs.sha12 }}{% endraw %}, {{ cookiecutter.stack_org }}/{{ cookiecutter.stack_name }}:latest

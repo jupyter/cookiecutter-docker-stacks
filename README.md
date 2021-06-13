@@ -1,7 +1,7 @@
 # Jupyter Docker Stacks cookiecutter
 
-[![Google Group](https://img.shields.io/badge/-Google%20Group-lightgrey.svg)](https://groups.google.com/forum/#!forum/jupyter)
-[![Build Status](https://travis-ci.org/jupyter/cookiecutter-docker-stacks.svg?branch=master)](https://travis-ci.org/jupyter/cookiecutter-docker-stacks)
+[![Github actions badge](https://github.com/jupyter/cookiecutter-docker-stacks/actions/workflows/tests.yml/badge.svg)](https://github.com/jupyter/cookiecutter-docker-stacks/actions/workflows/tests.yml "Tests status")
+[![Discourse badge](https://img.shields.io/discourse/https/discourse.jupyter.org/users.svg?color=%23f37626)](https://discourse.jupyter.org/ "Jupyter Discourse Forum")
 
 We love to see the community create and share new Jupyter Docker images.
 We've put together this cookiecutter project to help you get started
