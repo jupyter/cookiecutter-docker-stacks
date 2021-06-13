@@ -12,6 +12,9 @@ SHELL:=bash
 help:
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+pre-commit-all: ## run pre-commit hook on all files
+	@pre-commit run --all-files || (printf "\n\n\n" && git --no-pager diff --color=always)
+
 test/%:
 	cookiecutter --no-input --config-file configs/$(notdir $@) -f -o /tmp .
 	make -C /tmp/$(PROJECT_NAME) build test-env test
