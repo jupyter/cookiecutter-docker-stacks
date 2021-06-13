@@ -1,2 +1,2 @@
 default_context:
-  stack_base: 'jupyter/base-notebook'
+  stack_base: "jupyter/base-notebook"
