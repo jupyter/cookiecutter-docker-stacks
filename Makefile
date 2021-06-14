@@ -1,8 +1,15 @@
-.PHONY: help test test-env
+.PHONY: help pre-commit-all test test-env
 
 # Cookiecutter configurations to test
 ALL_CONFIGS=base.yaml \
-			minimal.yaml
+			minimal.yaml \
+			scipy.yaml \
+			r.yaml \
+			tensorflow.yaml \
+			datascience.yaml \
+			pyspark.yaml \
+			all-spark.yaml
+
 # Default project name selected by the cookiecutter template
 PROJECT_NAME:=my-jupyter-stack
 # Shell that make should use

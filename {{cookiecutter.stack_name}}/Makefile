@@ -1,4 +1,4 @@
-.PHONY: help build dev test test-env
+.PHONY: help test
 
 # Docker image name and tag
 IMAGE:={{ cookiecutter.stack_org }}/{{ cookiecutter.stack_name }}
@@ -27,5 +27,5 @@ run: ## run a shell in interactive mode in a stack
 test: ## Make a test run against the latest image
 	pytest tests
 
-test-env: ## Make a test environment by installing test dependencies with pip
-	pip install -r requirements-test.txt
+dev-env: ## install libraries required to build the image and run tests
+	pip install -r requirements-dev.txt
