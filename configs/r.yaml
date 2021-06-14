@@ -1,2 +1,2 @@
 default_context:
-  stack_base: "jupyter/r-notebook"
+  stack_base_image: "jupyter/r-notebook"
