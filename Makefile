@@ -26,7 +26,7 @@ test/%:
 	cookiecutter --no-input --config-file configs/$(notdir $@) -f -o /tmp .
 	make -C /tmp/$(PROJECT_NAME) build dev-env test
 
-test: $(ALL_CONFIGS:%=test/%) ## Make projects and runs their tests
+test-all: $(foreach I,$(ALL_CONFIGS),test/$(I)) ## Make projects and runs their tests
 
 test-env: ## Make a test environment by installing test dependencies with pip
 	pip install -r requirements-test.txt
