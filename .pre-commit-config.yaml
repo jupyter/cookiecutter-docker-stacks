@@ -22,16 +22,6 @@ repos:
         args: ["-d {extends: relaxed, rules: {line-length: disable}}", "-s"]
         files: \.(yaml|yml)$
         exclude: "{{cookiecutter.stack_name}}/.github/workflows/docker.yml"
-  - repo: https://github.com/openstack-dev/bashate.git
-    rev: 2.0.0
-    hooks:
-      - id: bashate
-        args: ["--ignore=E006"]
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.7.2.1
-    hooks:
-      - id: shellcheck
-        args: ["-x"]
   - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
     hooks:

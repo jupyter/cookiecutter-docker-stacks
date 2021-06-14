@@ -6,20 +6,12 @@ on:
   pull_request:
     paths-ignore:
       - "*.md"
-      - "binder/**"
-      - "docs/**"
-      - "examples/**"
-      - ".pre-commit-config.yaml"
   push:
     branches:
       - master
       - main
     paths-ignore:
       - "*.md"
-      - "binder/**"
-      - "docs/**"
-      - "examples/**"
-      - ".pre-commit-config.yaml"
 
 jobs:
   build-images:
@@ -35,7 +27,7 @@ jobs:
       - name: Install Dev Dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements-test.txt
+          make dev-env
       - name: Get refs - this will be used as tags later on
         shell: bash
         run: |

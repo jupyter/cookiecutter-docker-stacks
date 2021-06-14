@@ -1,6 +1,7 @@
-# Documentation
 .github
+tests
+.gitattributes
+.gitignore
 Makefile
 README.md
-requirements-test.txt
-tests
+requirements-dev.txt

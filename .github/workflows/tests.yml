@@ -26,4 +26,4 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-test.txt
       - name: Run tests
-        run: make test
+        run: make test-all
