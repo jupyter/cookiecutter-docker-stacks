@@ -10,7 +10,7 @@ repos:
         files: .*\.(yaml|yml)$
         exclude: "{{cookiecutter.stack_name}}/.github/workflows/docker.yml"
   - repo: https://github.com/hadolint/hadolint.git
-    rev: v2.5.0
+    rev: v2.6.0
     hooks:
       - id: hadolint-docker
         # FIXME: remove after https://github.com/hadolint/hadolint/issues/628 is resolved
