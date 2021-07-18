@@ -32,7 +32,7 @@ def docker_client():
 @pytest.fixture(scope="session")
 def image_name():
     """Image name to test"""
-    return "{{ cookiecutter.stack_org }}/{{ cookiecutter.stack_name }}"
+    return "{{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}"
 
 
 class TrackedContainer(object):

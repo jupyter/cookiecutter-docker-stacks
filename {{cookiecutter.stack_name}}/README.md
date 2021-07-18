@@ -1,3 +1,3 @@
-# {{ cookiecutter.stack_name }}
+# {{cookiecutter.stack_name}}
 
-{{ cookiecutter.stack_description }}
+{{cookiecutter.stack_description}}

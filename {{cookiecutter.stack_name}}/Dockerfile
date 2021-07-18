@@ -1,4 +1,4 @@
-FROM {{ cookiecutter.stack_base_image }}
+FROM {{cookiecutter.stack_base_image}}
 
 # Add RUN statements to install packages as the $NB_USER defined in the base images.
 
