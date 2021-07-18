@@ -11,5 +11,5 @@
     "jupyter/pyspark-notebook",
     "jupyter/all-spark-notebook"
   ],
-  "stack_description": "{{ cookiecutter.stack_name }} is a community maintained Jupyter Docker Stack image"
+  "stack_description": "{{cookiecutter.stack_name}} is a community maintained Jupyter Docker Stack image"
 }
