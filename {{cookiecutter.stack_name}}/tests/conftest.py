@@ -35,7 +35,7 @@ def image_name():
     return "{{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}"
 
 
-class TrackedContainer(object):
+class TrackedContainer:
     """Wrapper that collects docker container configuration and delays
     container creation/execution.
 
