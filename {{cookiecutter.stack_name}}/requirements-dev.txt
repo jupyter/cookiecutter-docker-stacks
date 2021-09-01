@@ -1,4 +1,3 @@
 docker
-six       # workaround to fix https://github.com/docker/docker-py/issues/2842
 pytest
 requests
