@@ -5,10 +5,8 @@ import logging
 import docker
 import pytest
 import requests
-
-from requests.packages.urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
-
+from requests.packages.urllib3.util.retry import Retry
 
 LOGGER = logging.getLogger(__name__)
 
