@@ -4,14 +4,27 @@ name: Build, test, and publish Docker Images
 # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
 on:
   pull_request:
-    paths-ignore:
-      - "*.md"
+    paths:
+      - ".github/workflows/docker.yml"
+
+      - "docker/**"
+
+      - "tests/**"
+      - "Makefile"
+      - "requirements-dev.txt"
   push:
     branches:
       - master
       - main
-    paths-ignore:
-      - "*.md"
+    paths:
+      - ".github/workflows/docker.yml"
+
+      - "docker/**"
+
+      - "tests/**"
+      - "Makefile"
+      - "requirements-dev.txt"
+  workflow_dispatch:
 
 jobs:
   build-test-publish-images:
@@ -46,7 +59,7 @@ jobs:
       - name: Build # Build only to be able to run tests
         uses: docker/build-push-action@v2
         with:
-          context: "."
+          context: "docker/"
           file: "Dockerfile"
           tags: |
             {{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}:latest
@@ -64,10 +77,10 @@ jobs:
         {%- endraw %}
 
       - name: Push
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v2
         with:
-          context: "."
+          context: "docker/"
           file: "Dockerfile"
           tags: |
             {{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}:{% raw %}${{steps.getrefs.outputs.sha12}}{% endraw %}, {{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}:latest
