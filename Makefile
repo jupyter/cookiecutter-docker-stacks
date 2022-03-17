@@ -33,7 +33,7 @@ pre-commit-all: ## run pre-commit hook on all files
 
 test/%:
 	cookiecutter --no-input --config-file configs/$(notdir $@) -f -o /tmp .
-	make -C /tmp/$(PROJECT_NAME) build dev-env test
+	make -C /tmp/$(PROJECT_NAME) build install-dev-env test
 
 test-all: $(foreach I, $(ALL_CONFIGS), test/$(I)) ## Make projects and runs their tests
 

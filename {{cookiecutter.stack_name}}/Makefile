@@ -42,5 +42,5 @@ test: ## Make a test run against the latest image
 
 
 
-dev-env: ## install libraries required to build the image and run tests
+install-dev-env: ## install libraries required to build the image and run tests
 	pip install -r requirements-dev.txt

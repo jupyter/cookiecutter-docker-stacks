@@ -30,7 +30,7 @@ jobs:
       - name: Install Dev Dependencies
         run: |
           python -m pip install --upgrade pip
-          make dev-env
+          make install-dev-env
 
       - name: Get refs - this will be used as tags later on
         shell: bash
