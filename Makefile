@@ -27,7 +27,7 @@ help:
 
 
 pre-commit-all: ## run pre-commit hook on all files
-	@pre-commit run --all-files || (printf "\n\n\n" && git --no-pager diff --color=always)
+	@pre-commit run --all-files
 
 
 
