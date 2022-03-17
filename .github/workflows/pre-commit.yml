@@ -6,6 +6,7 @@ on:
     branches:
       - master
       - main
+  workflow_dispatch:
 
 jobs:
   run-hooks:
@@ -14,10 +15,10 @@ jobs:
 
     steps:
       - name: Clone Main Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set Up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: 3.x
 
