@@ -7,7 +7,7 @@ on:
     paths:
       - ".github/workflows/docker.yml"
 
-      - "docker/**"
+      - "image/**"
 
       - "tests/**"
       - "Makefile"
@@ -19,7 +19,7 @@ on:
     paths:
       - ".github/workflows/docker.yml"
 
-      - "docker/**"
+      - "image/**"
 
       - "tests/**"
       - "Makefile"
