@@ -10,6 +10,6 @@ updates:
     schedule:
       interval: "weekly"
   - package-ecosystem: "github-actions"
-    directory: "/{{cookiecutter.stack_name}}/.github/"
+    directory: "/{{cookiecutter.stack_name}}/"
     schedule:
       interval: "daily"
