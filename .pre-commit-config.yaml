@@ -95,7 +95,9 @@ repos:
       - id: markdownlint
         args: ["--fix"]
 
-# Docker hooks do not work in pre-commit.ci
-# See: <https://github.com/pre-commit-ci/issues/issues/11>
+# pre-commit.ci config reference: https://pre-commit.ci/#configuration
 ci:
+  autoupdate_schedule: monthly
+  # Docker hooks do not work in pre-commit.ci
+  # See: <https://github.com/pre-commit-ci/issues/issues/11>
   skip: [hadolint-docker]
