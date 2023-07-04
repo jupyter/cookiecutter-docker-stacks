@@ -37,7 +37,7 @@ jobs:
           cookiecutter --no-input --config-file configs/${{ matrix.config }} --output-dir /tmp .
           cd /tmp/my-jupyter-stack
           pip install --upgrade -r requirements-dev.txt
-          docker build --rm --force-rm --tag jupyter/my-jupyter-stack image/
+          docker build --rm --force-rm --tag my-project/my-jupyter-stack image/
           pytest tests/
 
     strategy:
