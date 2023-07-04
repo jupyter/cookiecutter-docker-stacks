@@ -6,56 +6,49 @@ on:
   pull_request:
     paths:
       - ".github/workflows/docker.yml"
-
       - "image/**"
-
       - "tests/**"
-      - "Makefile"
       - "requirements-dev.txt"
   push:
     branches:
       - main
     paths:
       - ".github/workflows/docker.yml"
-
       - "image/**"
-
       - "tests/**"
-      - "Makefile"
       - "requirements-dev.txt"
   workflow_dispatch:
 
 jobs:
   build-test-publish-images:
-    name: Build, test, and publish Docker Images
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone Repository
+      - name: Checkout Repo ⚡️
         uses: actions/checkout@v3
 
-      - name: Set Up Python
+      - name: Set Up Python 🐍
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
-      - name: Install Dev Dependencies
+      - name: Install Dev Dependencies 📦
         run: |
-          python -m pip install --upgrade pip
-          make install-dev-env
+          pip install --upgrade pip
+          pip install --upgrade -r requirements-dev.txt
 
-      - name: Get refs - this will be used as tags later on
+      - name: Get refs - this will be used as tags later on 🏷
         shell: bash
         run: |
           echo "::set-output name=sha12::$(echo ${GITHUB_SHA} | cut -c1-12)"
         id: getrefs
 
-      - name: Set up Docker Buildx
+      - name: Set up Docker Buildx 🐳
         uses: docker/setup-buildx-action@v2
         with:
           driver: docker # to be able to test the image locally
 
-      - name: Build # Build only to be able to run tests
+      - name: Build 🐳 # Build only to be able to run tests
         uses: docker/build-push-action@v3
         with:
           context: image/
@@ -64,10 +57,10 @@ jobs:
             {{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}:latest
           push: false
 
-      - name: Run tests
+      - name: Run tests ✅
         run: python -m pytest tests
 
-      - name: Login to Docker Hub
+      - name: Login to Docker Hub 🔐
         if: github.ref == 'refs/heads/main'
         uses: docker/login-action@v2
         with:
@@ -76,7 +69,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
         {%- endraw %}
 
-      - name: Push
+      - name: Push to DockerHub 🐳
         if: github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v3
         with:
