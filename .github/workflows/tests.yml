@@ -33,7 +33,9 @@ jobs:
           pip install --upgrade -r requirements-test.txt
 
       - name: Run tests ✅
-        run: make test/${{ matrix.config }}
+        run: |
+          cookiecutter --no-input --config-file configs/${{ matrix.config }} -f -o /tmp .
+          make -C /tmp/my-jupyter-stack/${{ matrix.config }} build install-dev-env test
 
     strategy:
       matrix:
