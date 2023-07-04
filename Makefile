@@ -9,10 +9,12 @@ SHELL:=bash
 
 # Cookiecutter configurations to test
 ALL_CONFIGS= \
+	docker-stacks-foundation.yaml \
 	base.yaml \
 	minimal.yaml \
 	scipy.yaml \
 	r.yaml \
+	julia.yaml \
 	tensorflow.yaml \
 	datascience.yaml \
 	pyspark.yaml \

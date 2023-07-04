@@ -2,10 +2,12 @@
   "stack_name": "my-jupyter-stack",
   "stack_org": "my-project",
   "stack_base_image": [
+    "jupyter/docker-stacks-foundation",
     "jupyter/base-notebook",
     "jupyter/minimal-notebook",
     "jupyter/scipy-notebook",
     "jupyter/r-notebook",
+    "jupyter/julia-notebook",
     "jupyter/tensorflow-notebook",
     "jupyter/datascience-notebook",
     "jupyter/pyspark-notebook",
