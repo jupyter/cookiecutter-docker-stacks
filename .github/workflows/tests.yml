@@ -16,7 +16,6 @@ concurrency:
 
 jobs:
   test:
-    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -38,9 +37,9 @@ jobs:
 
     strategy:
       matrix:
+        # Skipping docker-stacks-foundation, because JupyterLab server is not installed there
         config:
           [
-            docker-stacks-foundation.yaml,
             base.yaml,
             minimal.yaml,
             scipy.yaml,
