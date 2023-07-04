@@ -35,7 +35,7 @@ jobs:
       - name: Run tests ✅
         run: |
           cookiecutter --no-input --config-file configs/${{ matrix.config }} -f -o /tmp .
-          make -C /tmp/my-jupyter-stack/${{ matrix.config }} build install-dev-env test
+          make -C /tmp/my-jupyter-stack build install-dev-env test
 
     strategy:
       matrix:
