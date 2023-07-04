@@ -16,22 +16,37 @@ concurrency:
 
 jobs:
   test:
-    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone Repository
+      - name: Checkout Repo ⚡️
         uses: actions/checkout@v3
 
-      - name: Set Up Python
+      - name: Set Up Python 🐍
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
-      - name: Install Dev Dependencies
+      - name: Install Dev Dependencies 📦
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements-test.txt
+          pip install --upgrade pip
+          pip install --upgrade -r requirements-test.txt
 
       - name: Run tests
-        run: make test-all
+        run: make test/${{ matrix.config }}
+
+    strategy:
+      matrix:
+        # Skipping docker-stacks-foundation, because JupyterLab server is not installed there
+        config:
+          [
+            base.yaml,
+            minimal.yaml,
+            scipy.yaml,
+            r.yaml,
+            julia.yaml,
+            tensorflow.yaml,
+            datascience.yaml,
+            pyspark.yaml,
+            all-spark.yaml,
+          ]
