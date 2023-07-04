@@ -21,7 +21,6 @@ on:
 
 jobs:
   build-test-publish-images:
-    name: Build, test, and publish Docker Images
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +37,7 @@ jobs:
           pip install --upgrade pip
           pip install --upgrade -r requirements-dev.txt
 
-      - name: Get refs - this will be used as tags later on
+      - name: Get refs - this will be used as tags later on 🏷
         shell: bash
         run: |
           echo "::set-output name=sha12::$(echo ${GITHUB_SHA} | cut -c1-12)"
