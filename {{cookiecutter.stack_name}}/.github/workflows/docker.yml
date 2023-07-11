@@ -1,7 +1,7 @@
 name: Build, test, and publish Docker Images
 
 # For more details on events that trigger workflows see:
-# https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 on:
   pull_request:
     paths:
