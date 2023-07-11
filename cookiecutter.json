@@ -2,7 +2,6 @@
   "stack_name": "my-jupyter-stack",
   "stack_org": "my-project",
   "stack_base_image": [
-    "jupyter/docker-stacks-foundation",
     "jupyter/base-notebook",
     "jupyter/minimal-notebook",
     "jupyter/scipy-notebook",
@@ -11,7 +10,8 @@
     "jupyter/tensorflow-notebook",
     "jupyter/datascience-notebook",
     "jupyter/pyspark-notebook",
-    "jupyter/all-spark-notebook"
+    "jupyter/all-spark-notebook",
+    "jupyter/docker-stacks-foundation"
   ],
   "stack_description": "{{cookiecutter.stack_name}} is a community maintained Jupyter Docker Stack image"
 }
