@@ -49,7 +49,7 @@ jobs:
           driver: docker # to be able to test the image locally
 
       - name: Build 🐳 # Build only to be able to run tests
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: image/
           file: image/Dockerfile
@@ -71,7 +71,7 @@ jobs:
 
       - name: Push to DockerHub 🐳
         if: github.ref == 'refs/heads/main'
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: image/
           file: image/Dockerfile
