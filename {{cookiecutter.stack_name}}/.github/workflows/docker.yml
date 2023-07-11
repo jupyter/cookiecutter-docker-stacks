@@ -40,7 +40,7 @@ jobs:
       - name: Get refs - this will be used as tags later on 🏷
         shell: bash
         run: |
-          echo "::set-output name=sha12::$(echo ${GITHUB_SHA} | cut -c1-12)"
+          echo "sha12=$(echo ${GITHUB_SHA} | cut -c1-12)" >> $GITHUB_OUTPUT
         id: getrefs
 
       - name: Set up Docker Buildx 🐳
