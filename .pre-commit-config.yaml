@@ -67,14 +67,14 @@ repos:
       - id: trailing-whitespace
 
   # Lint: Dockerfile
-  - repo: https://github.com/hadolint/hadolint.git
+  - repo: https://github.com/hadolint/hadolint
     rev: v2.12.1-beta
     hooks:
       - id: hadolint-docker
         entry: hadolint/hadolint:v2.12.1-beta hadolint
 
   # Lint: YAML
-  - repo: https://github.com/adrienverge/yamllint.git
+  - repo: https://github.com/adrienverge/yamllint
     rev: v1.32.0
     hooks:
       - id: yamllint
