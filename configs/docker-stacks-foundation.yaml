@@ -1,2 +1,2 @@
 default_context:
-  stack_base_image: "jupyter/docker-stacks-foundation"
+  stack_base_image: "quay.io/jupyter/docker-stacks-foundation"
