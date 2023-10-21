@@ -1,2 +1,2 @@
 default_context:
-  stack_base_image: "jupyter/minimal-notebook"
+  stack_base_image: "quay.io/jupyter/minimal-notebook"
