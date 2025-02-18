@@ -1,4 +1,4 @@
-name: Build, test, and publish Docker Images
+name: Build, test, and publish Docker Image
 
 env:
   {%- raw %}
@@ -7,7 +7,7 @@ env:
   {%- endraw %}
 
 # For more details on events that trigger workflows see:
-# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+# https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
 on:
   schedule:
     # Weekly, at 07:00 on Monday UTC time
@@ -37,7 +37,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-test-publish-images:
+  build-test-publish-image:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -80,8 +80,8 @@ jobs:
         run: python3 -m pytest tests
 
       - name: Login to Docker Hub 🔐
-        if: github.ref == 'refs/heads/main'
-        uses: docker/login-action@v3
+        if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
         with:
         {%- raw %}
           username: ${{ env.OWNER }}
