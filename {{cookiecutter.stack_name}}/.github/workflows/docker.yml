@@ -28,7 +28,7 @@ on:
       - "requirements-dev.txt"
   workflow_dispatch:
 
-# https://docs.github.com/en/actions/using-jobs/using-concurrency
+# https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs
 concurrency:
   # only cancel in-progress jobs or runs for the current workflow - matches against branch & tags
   {%- raw %}
