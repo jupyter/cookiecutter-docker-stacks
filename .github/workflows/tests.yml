@@ -51,6 +51,7 @@ jobs:
             r.yaml,
             julia.yaml,
             tensorflow.yaml,
+            pytorch.yaml,
             datascience.yaml,
             pyspark.yaml,
             all-spark.yaml,
