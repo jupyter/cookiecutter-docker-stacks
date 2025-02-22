@@ -67,7 +67,7 @@ jobs:
         run: >
           docker build
           --rm --force-rm
-          --tag ${{ env.OWNER }}/${{ env.IMAGE_NAME }}:latest
+          --tag ${{ env.OWNER }}/${{ env.IMAGE_NAME }}
           --tag ${{ env.OWNER }}/${{ env.IMAGE_NAME }}:${{steps.get_sha.outputs.sha12}}
           image/
         {%- endraw %}
