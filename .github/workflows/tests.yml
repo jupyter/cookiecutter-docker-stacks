@@ -48,14 +48,14 @@ jobs:
         run: pytest tests/
         env:
           TEST_IMAGE: my-project/my-jupyter-stack
-        # Skipping docker-stacks-foundation, because JupyterLab server is not installed there
-        if: ${{ matrix.config != 'docker-stacks-foundation.yaml' }}
+        # Skipping jupyter/docker-stacks-foundation image, because Jupyter Server is not installed there
+        if: ${{ matrix.config != 'foundation.yaml' }}
 
     strategy:
       matrix:
         config:
           [
-            docker-stacks-foundation.yaml,
+            foundation.yaml,
             base.yaml,
             minimal.yaml,
             scipy.yaml,
