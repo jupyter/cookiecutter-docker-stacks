@@ -38,7 +38,7 @@ jobs:
           cd /tmp/my-jupyter-stack
           pip install --upgrade -r requirements-dev.txt
           docker build --rm --force-rm --tag my-project/my-jupyter-stack image/
-          pytest tests/
+          TEST_IMAGE=my-project/my-jupyter-stack pytest tests/
 
     strategy:
       matrix:
