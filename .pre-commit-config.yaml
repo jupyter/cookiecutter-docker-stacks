@@ -49,13 +49,13 @@ repos:
             "types-tabulate",
             "types-urllib3",
           ]
-        # Unfortunately, `pre-commit` only runs on changed files
+        # Unfortunately, `pre-commit` only runs on modified files
         # This doesn't work well with `mypy --follow-imports error`
         # See: https://github.com/pre-commit/mirrors-mypy/issues/34#issuecomment-1062160321
         #
         # To work around this we run `mypy` only in manual mode
-        # So it won't run as part of `git commit` command
-        # But it will still be run as part of `pre-commit` workflow and give expected results
+        # So it won't run as part of `git commit` command,
+        # but it will still be run as part of `pre-commit` workflow and give expected results
         stages: [manual]
 
   # Autoformat: YAML, JSON, Markdown, etc.
@@ -97,11 +97,11 @@ repos:
       - id: flake8
 
   # Lint: Markdown
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.44.0
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.17.2
     hooks:
-      - id: markdownlint
-        args: ["--fix"]
+      - id: markdownlint-cli2
+        args: [--fix]
 
 # pre-commit.ci config reference: https://pre-commit.ci/#configuration
 ci:
