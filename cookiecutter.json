@@ -9,7 +9,10 @@
     "quay.io/jupyter/r-notebook",
     "quay.io/jupyter/julia-notebook",
     "quay.io/jupyter/tensorflow-notebook",
+    "quay.io/jupyter/tensorflow-notebook:cuda-latest",
     "quay.io/jupyter/pytorch-notebook",
+    "quay.io/jupyter/pytorch-notebook:cuda11-latest",
+    "quay.io/jupyter/pytorch-notebook:cuda12-latest",
     "quay.io/jupyter/datascience-notebook",
     "quay.io/jupyter/pyspark-notebook",
     "quay.io/jupyter/all-spark-notebook"
