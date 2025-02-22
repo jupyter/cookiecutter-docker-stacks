@@ -1,7 +1,8 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 import requests
-from tests.conftest import TrackedContainer, find_free_port
+from tests.utils.find_free_port import find_free_port
+from tests.utils.tracked_container import TrackedContainer
 
 
 def test_secured_server(
