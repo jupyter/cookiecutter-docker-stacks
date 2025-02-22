@@ -32,19 +32,30 @@ jobs:
           pip install --upgrade pip
           pip install --upgrade -r requirements-test.txt
 
+      - name: Create a project using cookiecutter 🍪
+        run: cookiecutter --no-input --config-file configs/${{ matrix.config }} --output-dir /tmp .
+
+      - name: Build docker image 🛠
+        working-directory: /tmp/my-jupyter-stack
+        run: docker build --rm --force-rm --tag my-project/my-jupyter-stack image/
+
+      - name: Install Dev Dependencies to run tests 📦
+        working-directory: /tmp/my-jupyter-stack
+        run: pip install --upgrade -r requirements-dev.txt
+
       - name: Run tests ✅
-        run: |
-          cookiecutter --no-input --config-file configs/${{ matrix.config }} --output-dir /tmp .
-          cd /tmp/my-jupyter-stack
-          pip install --upgrade -r requirements-dev.txt
-          docker build --rm --force-rm --tag my-project/my-jupyter-stack image/
-          TEST_IMAGE=my-project/my-jupyter-stack pytest tests/
+        working-directory: /tmp/my-jupyter-stack
+        run: pytest tests/
+        env:
+          TEST_IMAGE: my-project/my-jupyter-stack
+        # Skipping docker-stacks-foundation, because JupyterLab server is not installed there
+        if: ${{ matrix.config != 'docker-stacks-foundation.yaml' }}
 
     strategy:
       matrix:
-        # Skipping docker-stacks-foundation, because JupyterLab server is not installed there
         config:
           [
+            docker-stacks-foundation.yaml,
             base.yaml,
             minimal.yaml,
             scipy.yaml,
