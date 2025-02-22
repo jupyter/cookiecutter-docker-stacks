@@ -78,6 +78,8 @@ jobs:
 
       - name: Run tests ✅
         run: python3 -m pytest tests
+        env:
+          TEST_IMAGE: "{{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}"
 
       - name: Login to Docker Hub 🔐
         if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'

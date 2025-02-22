@@ -1,5 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
+import os
 from collections.abc import Generator
 
 import docker
@@ -29,7 +30,7 @@ def docker_client() -> docker.DockerClient:
 @pytest.fixture(scope="session")
 def image_name() -> str:
     """Image name to test"""
-    return "{{cookiecutter.stack_org}}/{{cookiecutter.stack_name}}"
+    return os.environ["TEST_IMAGE"]
 
 
 @pytest.fixture(scope="function")
