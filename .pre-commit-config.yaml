@@ -87,7 +87,6 @@ repos:
     hooks:
       - id: yamllint
         args: ["-d {extends: relaxed, rules: {line-length: disable}}", "-s"]
-        files: \.(yaml|yml)$
         exclude: "{{cookiecutter.stack_name}}/.github/workflows/docker.yml"
 
   # Lint: Python
