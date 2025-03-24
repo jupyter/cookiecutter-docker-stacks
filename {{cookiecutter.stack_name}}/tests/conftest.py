@@ -1,5 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
+import logging
 import os
 from collections.abc import Generator
 
@@ -9,6 +10,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from tests.utils.tracked_container import TrackedContainer
 from urllib3.util.retry import Retry
+
+LOGGER = logging.getLogger(__name__)
 
 
 @pytest.fixture(scope="session")
@@ -24,7 +27,9 @@ def http_client() -> requests.Session:
 @pytest.fixture(scope="session")
 def docker_client() -> docker.DockerClient:
     """Docker client configured based on the host environment"""
-    return docker.from_env()
+    client = docker.from_env()
+    LOGGER.debug(f"Docker client created: {client.version()}")
+    return client
 
 
 @pytest.fixture(scope="session")
@@ -45,7 +50,6 @@ def container(
     container = TrackedContainer(
         docker_client,
         image_name,
-        detach=True,
     )
     yield container
     container.remove()
